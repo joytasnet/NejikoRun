@@ -12,9 +12,7 @@ public class GameController : MonoBehaviour
     {
         int score = CalcScore();
         scoreText.text = $"Score:{score}m";
-
         lifePanel.UpdateLife(nejiko.Life());
-        
     }
     int CalcScore() {
         return (int)nejiko.transform.position.z;
