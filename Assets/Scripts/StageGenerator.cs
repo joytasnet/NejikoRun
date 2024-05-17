@@ -5,7 +5,7 @@ using UnityEngine;
 public class StageGenerator : MonoBehaviour
 {
     const int StageChipSize = 30;
-    int currentChipIndex;
+    int currentChipIndex;//作成済みChipの最大値
 
     public Transform character;
     public GameObject[] stageChips;
@@ -32,7 +32,7 @@ public class StageGenerator : MonoBehaviour
     }
     void UpdateStage(int toChipIndex)
     {
-        if (toChipIndex <= currentChipIndex) return;
+        if (toChipIndex <= currentChipIndex) { Debug.Log("UpdateStage"); return; };
         for (int i = currentChipIndex + 1; i <= toChipIndex; i++)
         {
             GameObject stageObject = GenerateStage(i);
